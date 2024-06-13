@@ -177,7 +177,7 @@
 
                                                 <div class="mb-6">
                                                     <div class="grid grid-cols-1 md:grid-cols-2">
-                                                        <div class="pr-3">
+                                                        <!-- <div class="pr-3">
                                                             <label for="input-label-with-helper-text"
                                                                 class="block text-sm mb-2 text-gray-400">EQUIPMENT CODE :</label>
                                                                 <input 
@@ -191,7 +191,7 @@
                                                             <i class="text-sm  text-gray-400 opacity-75 mt-2" id="hs-input-helper-text">
                                                                 *Fill in after "FUNAI" ex. "FUNAI-NB-35" please write "NB-35".
                                                             </i>
-                                                        </div>
+                                                        </div> -->
                                                         <div class="pr-3">
                                                             <label for="input-label-with-helper-text"
                                                                 class="block text-sm mb-2 text-gray-400">EQUIPMENT NAME :</label>

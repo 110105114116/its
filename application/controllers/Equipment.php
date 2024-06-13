@@ -26,7 +26,7 @@ class Equipment extends CI_Controller {
     }
 
     public function new() {
-        $insData['code'] = $this->input->post('code');
+        // $insData['code'] = $this->input->post('code');
         $insData['equip_name'] = $this->input->post('equip_name');
         $insData['equip_type'] = $this->input->post('equip_type');
         $insData['location'] = $this->input->post('location');

@@ -61,7 +61,7 @@ class Equipment_model extends CI_Model {
 
     public function addEquipment($insData) {
         $data = array(
-            'code' => $insData['code'],
+            // 'code' => $insData['code'],
             'name' => $insData['equip_name'],
             'type_id' => $insData['equip_type'],
             'location' => $insData['location'],

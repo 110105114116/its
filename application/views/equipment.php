@@ -207,8 +207,8 @@
                                     <table id="example" class="display" style="width:100%">
                                         <thead>
                                             <tr>
-                                                <th>ID</th>
                                                 <th>Name</th>
+                                                <th>Model</th>
                                                 <th>Type</th>
                                                 <th>Employee</th>
                                                 <th>Location</th>
@@ -220,12 +220,12 @@
                                             <?php foreach($data as $ep) { ?>
                                             <tr>
                                                 <td>
-                                                    <span class="text-sm font-semibold">FUNAI-<?php echo $ep->code; ?></span>
+                                                    <span class="text-sm font-semibold"><?php echo $ep->equip_name; ?></span>
                                                     <p class="text-xs font-semibold text-gray-500"><?php echo $ep->ip_address; ?></p>
                                                 </td>
                                                 <td>
-                                                    <span class="text-sm font-semibold text-sky-800"><?php echo $ep->equip_name; ?></span>
-                                                    <p class="text-xs font-semibold text-gray-500">model: <?php echo $ep->model; ?></p>
+                                                    <span class="text-sm font-semibold text-sky-800"><?php echo $ep->model; ?></span>
+                                                    <!-- <p class="text-xs font-semibold text-gray-500">model: <?php echo $ep->model; ?></p> -->
                                                 </td>
                                                 <td>
                                                     <span class="text-sm font-semibold text-sky-800"><?php echo $ep->type; ?></span>
