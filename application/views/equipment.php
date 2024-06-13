@@ -250,7 +250,7 @@
                                                     ?>
                                                 </td>
                                                 <td>
-                                                    <!-- <button 
+                                                    <button 
 														data-modal-target="default-modal" data-modal-toggle="default-modal"
 														class="border border-sky-800 px-3 rounded py-2 text-sky-800 font-semibold hover:bg-sky-800 hover:text-white">
                                                         <i class="ti ti-search relative z-1"></i>
@@ -260,7 +260,7 @@
                                                     </button>
                                                     <button class="border border-red-800 px-3 rounded py-2 text-red-800 font-semibold hover:bg-red-800 hover:text-white">
                                                         <i class="ti ti-trash relative z-1"></i>
-                                                    </button> -->
+                                                    </button>
                                                 </td>
                                             </tr>
                                             <?php } ?>
@@ -462,7 +462,7 @@
 			});
 		</script>
 
-		<div id="default-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+		<div id="default-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-[999] justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
 			<div class="relative p-4 w-full max-w-10xl max-h-full">
 				<div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
 
