@@ -21,6 +21,8 @@ class Equipment extends CI_Controller {
             $result['type'] = $this->Equipment_model->get_equip_type();
             $result['manuf'] = $this->Equipment_model->get_manufactorer();
             $result['emp'] = $this->Equipment_model->get_employee();
+            $result['model'] = $this->Equipment_model->get_model();
+            
             $this->load->view('add-equipment', $result);
         } else $this->load->view('login');
     }

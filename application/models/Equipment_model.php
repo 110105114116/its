@@ -59,6 +59,16 @@ class Equipment_model extends CI_Model {
         return $query->result();
     }
 
+    public function get_model(){
+        $this->db->select('model')
+        ->from('equipment')
+        ->group_by('model'); 
+
+        $query = $this->db->get();
+
+        return $query->result();
+    }
+
     public function addEquipment($insData) {
         $data = array(
             // 'code' => $insData['code'],

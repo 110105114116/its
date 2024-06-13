@@ -387,22 +387,29 @@
                                                                 name="ip"
                                                                 class="py-3 px-4 text-gray-500 block w-full border-gray-200 rounded-sm text-sm focus:border-blue-600 focus:ring-0 "
                                                                 aria-describedby="hs-input-helper-text"
-                                                                required
                                                                 autocomplete="off"
                                                             >
                                                         </div>
                                                         <div class="pr-3">
                                                             <label for="input-label-with-helper-text"
                                                                 class="block text-sm mb-2 text-gray-400">MODEL :</label>
-                                                            <input 
-                                                                type="text" 
-                                                                id="input-label-with-helper-text"
-                                                                name="model"
-                                                                class="py-3 px-4 text-gray-500 block w-full border-gray-200 rounded-sm text-sm focus:border-blue-600 focus:ring-0 "
-                                                                aria-describedby="hs-input-helper-text"
-                                                                required
-                                                                autocomplete="off"
-                                                            >
+
+                                                                <input 
+                                                                    list="modelList" 
+                                                                    name="model" 
+                                                                    id="model"
+                                                                    class="py-3 px-4 block w-full border-gray-200 rounded-sm text-sm focus:border-blue-600 focus:ring-0 "
+                                                                    aria-describedby="hs-input-helper-text"
+                                                                    autocomplete="off"
+                                                                >
+
+                                                                <datalist id="modelList">
+                                                                    <?php
+                                                                        foreach($model as $m) {
+                                                                            echo "<option value=\"".$m->model."\">";
+                                                                        }
+                                                                    ?>
+                                                                </datalist>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -455,24 +462,115 @@
                                                         <div class="pr-3">
                                                             <label for="input-label-with-helper-text"
                                                                 class="block text-sm mb-2 text-gray-400">MEMORY :</label>
-                                                            <input 
-                                                                type="text" 
-                                                                id="input-label-with-helper-text"
-                                                                name="mem"
-                                                                class="py-3 px-4 block w-full border-gray-200 rounded-sm text-sm focus:border-blue-600 focus:ring-0 "
-                                                                aria-describedby="hs-input-helper-text"
-                                                                required>
+
+
+                                                            <ul class="grid w-full gap-6 md:grid-cols-3">
+                                                                <li>
+                                                                    <input type="radio" id="mem1" name="mem" value="256GB" class="hidden peer" required />
+                                                                    <label 
+                                                                        for="mem1" 
+                                                                        class="inline-flex items-center justify-between w-full p-2
+                                                                                text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer 
+                                                                                dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 
+                                                                                peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 
+                                                                                hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700"
+                                                                    >                           
+                                                                        <div class="block">
+                                                                            <div class="w-full text-lg font-semibold">256 GB</div>
+                                                                        </div>
+                                                                    </label>
+                                                                </li>
+
+                                                                <li>
+                                                                    <input type="radio" id="mem2" name="mem" value="512GB" class="hidden peer" />
+                                                                    <label 
+                                                                        for="mem2" 
+                                                                        class="inline-flex items-center justify-between w-full p-2
+                                                                                text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer 
+                                                                                dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 
+                                                                                peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 
+                                                                                hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700"
+                                                                    >                           
+                                                                        <div class="block">
+                                                                            <div class="w-full text-lg font-semibold">512 GB</div>
+                                                                        </div>
+                                                                    </label>
+                                                                </li>
+
+                                                                <li>
+                                                                    <input type="radio" id="mem3" name="mem" value="1TB" class="hidden peer" />
+                                                                    <label 
+                                                                        for="mem3" 
+                                                                        class="inline-flex items-center justify-between w-full p-2
+                                                                                text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer 
+                                                                                dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 
+                                                                                peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 
+                                                                                hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700"
+                                                                    >                           
+                                                                        <div class="block">
+                                                                            <div class="w-full text-lg font-semibold">1 TB</div>
+                                                                        </div>
+                                                                    </label>
+                                                                </li>
+                                                            </ul>
                                                         </div>
-                                                        <div class="md:pl-3">
+                                                    </div>
+                                                </div>
+
+                                                <div class="mb-6">
+                                                    <div class="grid grid-cols-1 md:grid-cols-2">
+                                                        <div>
                                                             <label for="input-label-with-helper-text"
                                                                 class="block text-sm mb-2 text-gray-400">RAM :</label>
-                                                            <input 
-                                                                type="text" 
-                                                                id="input-label-with-helper-text"
-                                                                name="ram"
-                                                                class="py-3 px-4 block w-full border-gray-200 rounded-sm text-sm focus:border-blue-600 focus:ring-0 "
-                                                                aria-describedby="hs-input-helper-text"
-                                                                required>
+                                                                <ul class="grid w-full gap-6 md:grid-cols-3">
+                                                                <li>
+                                                                    <input type="radio" id="ram1" name="ram" value="4GB" class="hidden peer" required />
+                                                                    <label 
+                                                                        for="ram1" 
+                                                                        class="inline-flex items-center justify-between w-full p-2
+                                                                                text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer 
+                                                                                dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 
+                                                                                peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 
+                                                                                hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700"
+                                                                    >                           
+                                                                        <div class="block">
+                                                                            <div class="w-full text-lg font-semibold">4 GB</div>
+                                                                        </div>
+                                                                    </label>
+                                                                </li>
+
+                                                                <li>
+                                                                    <input type="radio" id="ram2" name="ram" value="8GB" class="hidden peer" />
+                                                                    <label 
+                                                                        for="ram2" 
+                                                                        class="inline-flex items-center justify-between w-full p-2
+                                                                                text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer 
+                                                                                dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 
+                                                                                peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 
+                                                                                hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700"
+                                                                    >                           
+                                                                        <div class="block">
+                                                                            <div class="w-full text-lg font-semibold">8 GB</div>
+                                                                        </div>
+                                                                    </label>
+                                                                </li>
+
+                                                                <li>
+                                                                    <input type="radio" id="ram3" name="ram" value="16GB" class="hidden peer" />
+                                                                    <label 
+                                                                        for="ram3" 
+                                                                        class="inline-flex items-center justify-between w-full p-2
+                                                                                text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer 
+                                                                                dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 
+                                                                                peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 
+                                                                                hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700"
+                                                                    >                           
+                                                                        <div class="block">
+                                                                            <div class="w-full text-lg font-semibold">16 GB</div>
+                                                                        </div>
+                                                                    </label>
+                                                                </li>
+                                                            </ul>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -483,10 +581,10 @@
                                                             <label for="input-label-with-helper-text"
                                                                 class="block text-sm mb-2 text-gray-400">PRICE (THB) :</label>
                                                             <input type="text" id="input-label-with-helper-text"
-                                                            name="price"
+                                                                name="price"
                                                                 class="py-3 px-4 block w-full border-gray-200 rounded-sm text-sm focus:border-blue-600 focus:ring-0 "
                                                                 aria-describedby="hs-input-helper-text"
-                                                                required>
+                                                                >
                                                         </div>
                                                     </div>
                                                 </div>
