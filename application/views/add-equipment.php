@@ -273,34 +273,56 @@
                                                         <div class="pr-3">
                                                             <label for="input-label-with-helper-text"
                                                                 class="block text-sm mb-2 text-gray-400">FACTORY :</label>
-                                                            <input 
-                                                                type="radio" 
-                                                                class="shrink-0 mt-0.5 rounded-[4px] border-gray-400 rounded 
-                                                                        text-blue-600 focus:ring-blue-500 disabled:opacity-50 
-                                                                        disabled:pointer-events-none" 
-                                                                id="hs-disabled-checkbox"
-                                                                name="factory"
-                                                                value="1"
-                                                                required>
-                                                            <label class="text-sm ms-3 ">Factory 1</label>
-                                                            <input 
-                                                                type="radio" 
-                                                                class="shrink-0 mt-0.5 rounded-[4px] border-gray-400 rounded 
-                                                                        text-blue-600 focus:ring-blue-500 disabled:opacity-50 
-                                                                        disabled:pointer-events-none" 
-                                                                id="hs-disabled-checkbox"
-                                                                value="2"
-                                                                name="factory">
-                                                            <label class="text-sm ms-3 ">Factory 2</label>
-                                                            <input 
-                                                                type="radio" 
-                                                                class="shrink-0 mt-0.5 rounded-[4px] border-gray-400 rounded 
-                                                                        text-blue-600 focus:ring-blue-500 disabled:opacity-50 
-                                                                        disabled:pointer-events-none" 
-                                                                id="hs-disabled-checkbox"
-                                                                value="3"
-                                                                name="factory">
-                                                            <label class="text-sm ms-3 ">Factory 3</label>
+
+                                                                <ul class="grid w-full gap-6 md:grid-cols-3">
+                                                                    <li>
+                                                                        <input type="radio" id="factory1" name="factory" value="1" class="hidden peer" required />
+                                                                        <label 
+                                                                            for="factory1" 
+                                                                            class="inline-flex items-center justify-between w-full p-2
+                                                                                    text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer 
+                                                                                    dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 
+                                                                                    peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 
+                                                                                    hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700"
+                                                                        >                           
+                                                                            <div class="block">
+                                                                                <div class="w-full text-lg font-semibold">Factory 1</div>
+                                                                            </div>
+                                                                        </label>
+                                                                    </li>
+
+                                                                    <li>
+                                                                        <input type="radio" id="factory2" name="factory" value="2" class="hidden peer" />
+                                                                        <label 
+                                                                            for="factory2" 
+                                                                            class="inline-flex items-center justify-between w-full p-2
+                                                                                    text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer 
+                                                                                    dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 
+                                                                                    peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 
+                                                                                    hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700"
+                                                                        >                           
+                                                                            <div class="block">
+                                                                                <div class="w-full text-lg font-semibold">Factory 2</div>
+                                                                            </div>
+                                                                        </label>
+                                                                    </li>
+
+                                                                    <li>
+                                                                        <input type="radio" id="factory3" name="factory" value="3" class="hidden peer" />
+                                                                        <label 
+                                                                            for="factory3" 
+                                                                            class="inline-flex items-center justify-between w-full p-2
+                                                                                    text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer 
+                                                                                    dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 
+                                                                                    peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 
+                                                                                    hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700"
+                                                                        >                           
+                                                                            <div class="block">
+                                                                                <div class="w-full text-lg font-semibold">Factory 3</div>
+                                                                            </div>
+                                                                        </label>
+                                                                    </li>
+                                                                </ul>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -390,25 +412,40 @@
                                                         <div class="pr-3">
                                                             <label for="input-label-with-helper-text"
                                                                 class="block text-sm mb-2 text-gray-400">MEMORY TYPE :</label>
-                                                            <input 
-                                                                type="radio" 
-                                                                class="shrink-0 mt-0.5 rounded-[4px] border-gray-400 rounded 
-                                                                        text-blue-600 focus:ring-blue-500 disabled:opacity-50 
-                                                                        disabled:pointer-events-none" 
-                                                                id="hs-disabled-checkbox"
-                                                                name="mem_type"
-                                                                value="1"
-                                                                required>
-                                                            <label class="text-sm ms-3 ">HDD</label>
-                                                            <input 
-                                                                type="radio" 
-                                                                class="shrink-0 mt-0.5 rounded-[4px] border-gray-400 rounded 
-                                                                        text-blue-600 focus:ring-blue-500 disabled:opacity-50 
-                                                                        disabled:pointer-events-none" 
-                                                                id="hs-disabled-checkbox"
-                                                                value="2"
-                                                                name="mem_type">
-                                                            <label class="text-sm ms-3 ">SSD</label>
+
+                                                            <ul class="grid w-full gap-6 md:grid-cols-3">
+                                                                <li>
+                                                                    <input type="radio" id="mem_type1" name="mem_type" value="1" class="hidden peer" required />
+                                                                    <label 
+                                                                        for="mem_type1" 
+                                                                        class="inline-flex items-center justify-between w-full p-2
+                                                                                text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer 
+                                                                                dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 
+                                                                                peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 
+                                                                                hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700"
+                                                                    >                           
+                                                                        <div class="block">
+                                                                            <div class="w-full text-lg font-semibold">HDD</div>
+                                                                        </div>
+                                                                    </label>
+                                                                </li>
+
+                                                                <li>
+                                                                    <input type="radio" id="mem_type2" name="mem_type" value="2" class="hidden peer" />
+                                                                    <label 
+                                                                        for="mem_type2" 
+                                                                        class="inline-flex items-center justify-between w-full p-2
+                                                                                text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer 
+                                                                                dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 
+                                                                                peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 
+                                                                                hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700"
+                                                                    >                           
+                                                                        <div class="block">
+                                                                            <div class="w-full text-lg font-semibold">SSD</div>
+                                                                        </div>
+                                                                    </label>
+                                                                </li>
+                                                            </ul>
                                                         </div>
                                                     </div>
                                                 </div>
