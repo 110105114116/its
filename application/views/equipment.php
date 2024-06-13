@@ -33,7 +33,6 @@
                 overflow-x: hidden;
             }
             
-            
             .toast {
                 position: absolute;
                 top: 25px;
@@ -203,7 +202,7 @@
 							</header>
 
 							<!-- Content -->
-							<div class="card">
+							<div class="card overflow-x-auto">
 								<div class="card-body flex flex-col gap-6">
                                     <table id="example" class="display" style="width:100%">
                                         <thead>
