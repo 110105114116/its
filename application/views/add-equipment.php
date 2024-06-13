@@ -176,7 +176,7 @@
                                             <div class="card-body">
 
                                                 <div class="mb-6">
-                                                    <div class="grid grid-cols-2">
+                                                    <div class="grid grid-cols-1 md:grid-cols-2">
                                                         <div class="pr-3">
                                                             <label for="input-label-with-helper-text"
                                                                 class="block text-sm mb-2 text-gray-400">EQUIPMENT CODE :</label>
@@ -208,7 +208,7 @@
                                                 </div>
 
                                                 <div class="mb-6">
-                                                    <div class="grid grid-cols-2">
+                                                    <div class="grid grid-cols-1 md:grid-cols-2">
                                                         
                                                         <div>
                                                             <label for="input-label-with-helper-text"
@@ -231,7 +231,7 @@
                                                                 ?>
                                                             </select>
                                                         </div>
-                                                        <div class="pl-3">
+                                                        <div class="md:pl-3">
                                                             <label for="input-label-with-helper-text"
                                                                 class="block text-sm mb-2 text-gray-400">MANUFACTURER :</label>
 
@@ -257,7 +257,7 @@
                                                 </div>
 
                                                 <div class="mb-6">
-                                                    <div class="grid grid-cols-2">
+                                                    <div class="grid grid-cols-1 md:grid-cols-2">
                                                         <div class="pr-3">
                                                             <label for="input-label-with-helper-text"
                                                                 class="block text-sm mb-2 text-gray-400">LOCATION :</label>
@@ -306,7 +306,7 @@
                                                 </div>
 
                                                 <div class="mb-6">
-                                                    <div class="grid grid-cols-2">
+                                                    <div class="grid grid-cols-1 md:grid-cols-2">
                                                         <div class="pr-3">
                                                             <label for="input-label-with-helper-text"
                                                                 class="block text-sm mb-2 text-gray-400">RESPONSIBILITY (employee id):</label>
@@ -332,7 +332,7 @@
                                                 </div>
 
                                                 <div class="mb-6">
-                                                    <div class="grid grid-cols-2">
+                                                    <div class="grid grid-cols-1 md:grid-cols-2">
                                                         <div class="pr-3">
                                                             <label for="input-label-with-helper-text"
                                                                 class="block text-sm mb-2 text-gray-400">DATE RECEIVE :</label>
@@ -355,7 +355,7 @@
                                             <div class="card-body">
 
                                                 <div class="mb-6">
-                                                    <div class="grid grid-cols-2">
+                                                    <div class="grid grid-cols-1 md:grid-cols-2">
                                                         <div class="pr-3">
                                                             <label for="input-label-with-helper-text"
                                                                 class="block text-sm mb-2 text-gray-400">IP ADDRESS :</label>
@@ -386,7 +386,7 @@
                                                 </div>
 
                                                 <div class="mb-6">
-                                                    <div class="grid grid-cols-2">
+                                                    <div class="grid grid-cols-1 md:grid-cols-2">
                                                         <div class="pr-3">
                                                             <label for="input-label-with-helper-text"
                                                                 class="block text-sm mb-2 text-gray-400">MEMORY TYPE :</label>
@@ -414,7 +414,7 @@
                                                 </div>
 
                                                 <div class="mb-6">
-                                                    <div class="grid grid-cols-2">
+                                                    <div class="grid grid-cols-1 md:grid-cols-2">
                                                         <div class="pr-3">
                                                             <label for="input-label-with-helper-text"
                                                                 class="block text-sm mb-2 text-gray-400">MEMORY :</label>
@@ -426,7 +426,7 @@
                                                                 aria-describedby="hs-input-helper-text"
                                                                 required>
                                                         </div>
-                                                        <div class="pl-3">
+                                                        <div class="md:pl-3">
                                                             <label for="input-label-with-helper-text"
                                                                 class="block text-sm mb-2 text-gray-400">RAM :</label>
                                                             <input 
@@ -441,7 +441,7 @@
                                                 </div>
 
                                                 <div class="mb-6">
-                                                    <div class="grid grid-cols-2">
+                                                    <div class="grid grid-cols-1 md:grid-cols-2">
                                                         <div class="pr-3">
                                                             <label for="input-label-with-helper-text"
                                                                 class="block text-sm mb-2 text-gray-400">PRICE (THB) :</label>
