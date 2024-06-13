@@ -26,7 +26,7 @@
                 <li class="sidebar-item">
                     <a class="sidebar-link gap-3 py-2.5 my-1 text-base  
                         flex items-center relative  rounded-md text-gray-500  w-full" 
-                        href="#"
+                        href="<?php echo base_url(); ?>dashboard#"
                     >
                         <i class="ti ti-layout-dashboard ps-2  text-2xl"></i> <span>Dashboard</span>
                     </a>
@@ -41,7 +41,7 @@
                     <a 
                         class="sidebar-link gap-3 py-2.5 my-1 text-base 
                             flex items-center relative  rounded-md text-gray-500  w-full" 
-                        href="#"
+                        href="<?php echo base_url(); ?>equipment/add#"
                     >
                         <i class="ti ti-clipboard-plus ps-2 text-2xl"></i> <span>New</span>
                     </a>
@@ -51,13 +51,13 @@
                     <a 
                         class="sidebar-link gap-3 py-2.5 my-1 text-base 
                             flex items-center relative  rounded-md text-gray-500  w-full" 
-                        href="#"
+                        href="<?php echo base_url(); ?>equipment#"
                     >
                         <i class="ti ti-columns ps-2 text-2xl"></i> <span>View Equipment</span>
                     </a>
                 </li>
                 
-                <li class="sidebar-item">
+                <!-- <li class="sidebar-item">
                     <a 
                         class="sidebar-link gap-3 py-2.5 my-1 text-base 
                             flex items-center relative  rounded-md text-gray-500  w-full" 
@@ -94,7 +94,7 @@
                     >
                         <i class="ti ti-columns ps-2 text-2xl"></i> <span>Program list</span>
                     </a>
-                </li>
+                </li> -->
             </ul>
         </nav>
     </div>
