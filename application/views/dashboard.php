@@ -1,25 +1,16 @@
 <!DOCTYPE html>
 <html lang="en" >
 	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>DASHBOARD | INFORMATION TECHNOLOGY SYSTEM</title>
 
-		<link rel="shortcut icon" type="image/png" href="<?php echo base_url(); ?>img/logo-mini.png" />
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"/>
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css">
-		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/theme.css" />
-		
-		<script src="https://cdn.tailwindcss.com"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <?php $this->load->view('header.php'); ?>
 	</head>
 
 	<body class=" bg-surface">
 		<main>
 			<div id="main-wrapper" class="flex p-5 xl:pr-0">
 				<!-- Side bar -->
-		        <?php $this->load->view('sidebar-dashboard.php'); ?>
+		        <?php $this->load->view('sidebar.php'); ?>
 				
 				<!-- Main -->
 				<div class=" w-full page-wrapper xl:px-6 px-0">
@@ -39,26 +30,7 @@
 										<h3 class="text-lg font-semibold">Equipment management</h3>
 									</ul>
 
-									<div class="flex items-center gap-4">
-										<div class="hs-dropdown relative inline-flex [--placement:bottom-right] sm:[--trigger:hover]">
-											<a class="relative hs-dropdown-toggle cursor-pointer align-middle rounded-full">
-												<img class="object-cover w-9 h-9 rounded-full" src="<?php echo base_url(); ?>assets/images/profile/user-1.jpg" alt=""
-													aria-hidden="true">
-											</a>
-											<div class="card hs-dropdown-menu transition-[opacity,margin] rounded-md duration hs-dropdown-open:opacity-100 opacity-0 mt-2 min-w-max  w-[200px] hidden z-[12]"
-												aria-labelledby="hs-dropdown-custom-icon-trigger">
-												<div class="card-body p-0 py-2">
-													<a href="javscript:void(0)" class="flex gap-2 items-center font-medium px-4 py-1.5 hover:bg-gray-200 text-gray-400">
-														<i class="ti ti-mail  text-xl"></i>
-														<p class="text-sm ">My Account</p>
-													</a>
-													<div class="px-4 mt-[7px] grid">
-														<a href="<?php echo base_url(); ?>login/logout" class="btn bg-white text-red-500 border border-red-500 font-medium text-[15px] w-full hover:bg-red-600 hover:text-white">Logout</a>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
+									<?php $this->load->view('popup-profile.php'); ?>
 								</nav>
 							</header>
 
@@ -152,25 +124,16 @@
 									</div>
 								</div>
 							</div>
-							
-							<!-- Footer -->
-							<footer>
-								<p class="text-base text-gray-400 font-normal p-3 text-center">
-									Development by Funai(Thailand) Co.,Ltd.
-								</p>
-							</footer>
+
+							<?php $this->load->view('footer.php'); ?>
 						</div>
 					</main>
 				</div>
 			</div>
 		</main>
 	
-		<script src="<?php echo base_url(); ?>assets/libs/jquery/dist/jquery.min.js"></script>
-		<script src="<?php echo base_url(); ?>assets/libs/simplebar/dist/simplebar.min.js"></script>
-		<script src="<?php echo base_url(); ?>assets/libs/iconify-icon/dist/iconify-icon.min.js"></script>
-		<script src="<?php echo base_url(); ?>assets/libs/@preline/dropdown/index.js"></script>
-		<script src="<?php echo base_url(); ?>assets/libs/@preline/overlay/index.js"></script>
-		<script src="<?php echo base_url(); ?>assets/js/sidebarmenu.js"></script>
+        <?php $this->load->view('script-all.php'); ?>
+		
 		<script src="<?php echo base_url(); ?>assets/libs/apexcharts/dist/apexcharts.min.js"></script>
 		<script src="<?php echo base_url(); ?>assets/js/dashboard.js"></script>
 	</body>

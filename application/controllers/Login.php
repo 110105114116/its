@@ -11,7 +11,7 @@ class Login extends CI_Controller {
 
 	public function index() {
         if(isset($this->session->userdata['emp_id'])) {
-            $this->load->view('dashboard#');
+			redirect('dashboard#');
         } else $this->load->view('login');
 	}
 

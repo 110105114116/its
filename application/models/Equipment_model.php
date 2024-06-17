@@ -9,6 +9,7 @@ class Equipment_model extends CI_Model {
 
     public function get_all(){
         $this->db->select('
+            eq.id as id,
             eq.code as code,
             eq.name as equip_name,
             eq.model as model,
@@ -86,7 +87,30 @@ class Equipment_model extends CI_Model {
             'ram' => $insData['ram'],
             'price' => $insData['price']
         );
-        
-        return $this->db->insert('equipment', $data);
+
+        $result['statusIS'] = $this->db->insert('equipment', $data);
+        $result['id'] = $this->db->insert_id();
+
+        return $result;
+    }
+
+    public function addPlan($id) {
+        for($i = 1 ; $i <= 7 ; $i++) {
+            $data = array(
+                'topic' => $i,
+                'equip_id' => $id
+            );
+            $this->db->insert('plan_maintenance', $data);
+        }
+    }
+
+    public function get_plan($id) {
+        $this->db->select('*')
+        ->from('plan_maintenance')
+        ->where('equip_id', $id);
+
+        $query = $this->db->get();
+
+        return $query->result();
     }
 }

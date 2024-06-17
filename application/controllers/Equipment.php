@@ -44,10 +44,12 @@ class Equipment extends CI_Controller {
         $insData['mem'] = $this->input->post('mem');
         $insData['ram'] = $this->input->post('ram');
         $insData['price'] = $this->input->post('price');
-        
-        // print_r($insData);
 
-        if($this->Equipment_model->addEquipment($insData) == 1) {
+        $result = $this->Equipment_model->addEquipment($insData);
+
+        if($result['statusIS'] == 1) {
+            $this->Equipment_model->addPlan($result['id']);
+
             $this->session->set_flashdata(
 				array(
 					'msgerr' => '<div class="toast active">
@@ -82,5 +84,13 @@ class Equipment extends CI_Controller {
 			);
 			redirect('equipment/add', 'refresh');
 		}
+    }
+
+    public function getPlanManage() {
+        $id = $this->input->post('id');
+
+        $result['data'] = $this->Equipment_model->get_plan($id);
+
+        $this->load->view('plan-manage', $result);
     }
 }
