@@ -13,7 +13,7 @@ class Equipment_model extends CI_Model {
             eq.code as code,
             eq.name as equip_name,
             eq.model as model,
-            eq.ip_address as ip_address,
+            i.ip as ip_address,
             t.name as type,
             e.emp_id as emp_id,
             CONCAT(e.f_name_th," ",e.l_name_th) as fullname,
@@ -26,7 +26,8 @@ class Equipment_model extends CI_Model {
         ')
         ->from('equipment eq')
         ->join('employees e', 'e.emp_id = eq.emp_id')
-        ->join('equipment_type t', 't.id = eq.type_id');
+        ->join('equipment_type t', 't.id = eq.type_id')
+        ->join('ip_address i', 'i.eq_id = eq.id');
 
         $query = $this->db->get();
 
@@ -108,6 +109,38 @@ class Equipment_model extends CI_Model {
         $this->db->select('*')
         ->from('plan_maintenance')
         ->where('equip_id', $id);
+
+        $query = $this->db->get();
+
+        return $query->result();
+    }
+
+    public function updateIP($eq_id, $ip) {
+        $data = array(
+            'eq_id' => $eq_id,
+            'status' => 2
+        );
+        
+        $this->db->where('ip', $ip);
+        $this->db->update('ip_address', $data);
+    }
+
+    public function getIP() {
+        $this->db->select('
+            i.ip as ip,
+            e.name as name,
+            t.name as type,
+            em.emp_id as emp_id,
+            CONCAT(em.f_name_th," ",em.l_name_th) as fullname,
+            e.location as location,
+            e.factory as fac,
+            i.status as status,
+            i.internet as internet
+        ')
+        ->from('ip_address i')
+        ->join('equipment e', 'i.eq_id = e.id', 'left')
+        ->join('equipment_type t', 't.id = e.type_id', 'left')
+        ->join('employees em', 'em.emp_id = e.emp_id', 'left');
 
         $query = $this->db->get();
 

@@ -50,6 +50,8 @@ class Equipment extends CI_Controller {
         if($result['statusIS'] == 1) {
             $this->Equipment_model->addPlan($result['id']);
 
+            $this->Equipment_model->updateIP($result['id'], $insData['ip']);
+
             $this->session->set_flashdata(
 				array(
 					'msgerr' => '<div class="toast active">
