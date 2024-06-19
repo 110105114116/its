@@ -127,6 +127,7 @@ class Equipment_model extends CI_Model {
 
     public function getIP() {
         $this->db->select('
+            i.id as no,
             i.ip as ip,
             e.name as name,
             t.name as type,

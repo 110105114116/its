@@ -9,11 +9,12 @@
 		<script>
 			$(document).ready( function () {
 				$('#ipTable').DataTable({
-					"iDisplayLength": 20,
+					"iDisplayLength": 10,
 					"columnDefs": [
 						{"className": "dt-center", "targets": "_all"}
 					],
-					"bLengthChange": false
+					"bLengthChange": true,
+                    "lengthMenu": [10, 20, 50, 100, 200, 500]
 				});
 			});
 		</script>
@@ -59,17 +60,22 @@
                                     <table id="ipTable" class="display" style="width:100%">
                                         <thead>
                                             <tr>
+                                                <th>No.</th>
                                                 <th>IP Address</th>
                                                 <th>Equipment</th>
                                                 <th>Responsibility</th>
                                                 <th>Location</th>
                                                 <th>Internet</th>
                                                 <th>Status</th>
+                                                <th>Management</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <?php foreach($data as $d) { ?>
                                             <tr>
+                                                <td>
+                                                    <span class="text-sm font-semibold"><?php echo $d->no; ?></span>
+                                                </td>
                                                 <td>
                                                     <span class="text-sm font-semibold"><?php echo $d->ip; ?></span>
                                                 </td>
@@ -83,7 +89,13 @@
                                                 </td>
                                                 <td>
                                                     <span class="text-sm font-semibold text-sky-800"><?php echo $d->location; ?></span>
-                                                    <p class="text-xs font-semibold text-gray-500"><?php echo $d->fac; ?></p>
+                                                    <p class="text-xs font-semibold text-gray-500">
+                                                        <?php 
+                                                            if(isset($d->fac)) {
+                                                                echo "Factory: ".$d->fac; 
+                                                            } else echo "";
+                                                        ?>
+                                                    </p>
                                                 </td>
                                                 
                                                 <td>
@@ -91,9 +103,9 @@
                                                         <?php
                                                             if($d->internet == 1) {
                                                                 echo "YES";
-                                                            } else if ($d->internet == 0) {
+                                                            } else if ($d->internet == "0") {
                                                                 echo "No";
-                                                            } else echo "Unknow";
+                                                            } else echo "-";
                                                         ?>
                                                     </span>
                                                 </td>
@@ -114,6 +126,18 @@
                                                             echo "</span>";
                                                         }
                                                     ?>
+                                                </td>
+                                                <td>
+                                                    <button class="border border-sky-800 px-3 rounded py-2 text-sky-800 
+                                                        font-semibold hover:bg-sky-800 hover:text-white">
+                                                        <i class="ti ti-search relative z-1"></i>
+                                                    </button>
+                                                    <!-- <button class="border border-yellow-600 px-3 rounded py-2 text-yellow-600 font-semibold hover:bg-yellow-600 hover:text-white">
+                                                        <i class="ti ti-edit relative z-1"></i>
+                                                    </button>
+                                                    <button class="border border-red-800 px-3 rounded py-2 text-red-800 font-semibold hover:bg-red-800 hover:text-white">
+                                                        <i class="ti ti-trash relative z-1"></i>
+                                                    </button> -->
                                                 </td>
                                             </tr>
                                             <?php } ?>

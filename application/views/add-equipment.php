@@ -290,9 +290,9 @@
 
                                                             <ul class="grid w-full gap-6 md:grid-cols-3">
                                                                 <li>
-                                                                    <input type="radio" id="mem_type1" name="mem_type" value="0" class="hidden peer" required />
+                                                                    <input type="radio" id="mem_type0" name="mem_type" value="0" class="hidden peer" required />
                                                                     <label 
-                                                                        for="mem_type1" 
+                                                                        for="mem_type0" 
                                                                         class="inline-flex items-center justify-between w-full p-2
                                                                                 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer 
                                                                                 dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 
@@ -349,9 +349,9 @@
 
                                                             <ul class="grid w-full gap-6 md:grid-cols-4">
                                                                 <li>
-                                                                    <input type="radio" id="mem1" name="mem" value="-" class="hidden peer" required />
+                                                                    <input type="radio" id="mem0" name="mem" value="-" class="hidden peer" required />
                                                                     <label 
-                                                                        for="mem1" 
+                                                                        for="mem0" 
                                                                         class="inline-flex items-center justify-between w-full p-2
                                                                                 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer 
                                                                                 dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 
@@ -422,9 +422,9 @@
                                                                 class="block text-sm mb-2 text-gray-400">RAM :</label>
                                                                 <ul class="grid w-full gap-6 md:grid-cols-4">
                                                                 <li>
-                                                                    <input type="radio" id="ram1" name="ram" value="-" class="hidden peer" required />
+                                                                    <input type="radio" id="ram0" name="ram" value="-" class="hidden peer" required />
                                                                     <label 
-                                                                        for="ram1" 
+                                                                        for="ram0" 
                                                                         class="inline-flex items-center justify-between w-full p-2
                                                                                 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer 
                                                                                 dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 

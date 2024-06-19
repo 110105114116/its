@@ -9,11 +9,12 @@
 		<script>
 			$(document).ready( function () {
 				$('#example').DataTable({
-					"iDisplayLength": 4,
+					"iDisplayLength": 10,
 					"columnDefs": [
 						{"className": "dt-center", "targets": "_all"}
 					],
-					"bLengthChange": false
+					"bLengthChange": true,
+                    "lengthMenu": [10, 20, 50, 100, 200, 500],
 				});
 			});
 		</script>
