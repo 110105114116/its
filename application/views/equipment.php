@@ -1,4 +1,3 @@
-<?php echo $this->session->flashdata('msgerr'); ?>
 <!DOCTYPE html>
 <html lang="en" >
 	<head>
@@ -125,6 +124,8 @@
 				</div>
 			</div>
 		</main>
+
+        <?php echo $this->session->flashdata('msgerr'); ?>
 
         <div 
             id="detailPlan" 
