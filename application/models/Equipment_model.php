@@ -36,7 +36,8 @@ class Equipment_model extends CI_Model {
 
     public function get_equip_type(){
         $this->db->select('*')
-        ->from('equipment_type');
+        ->from('equipment_type')
+        ->where('status', 1);
 
         $query = $this->db->get();
 

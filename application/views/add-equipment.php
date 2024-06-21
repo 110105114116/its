@@ -38,31 +38,16 @@
 							<div class="card p-3">
                                 <form method="post" action="<?php echo base_url(); ?>equipment/new">
                                     <div class="card-body flex flex-col gap-1">
-                                        
                                         <h6 class="text-lg text-gray-500 font-semibold">Equipment Info</h6>
                                         <div class="card">
                                             <div class="card-body">
 
                                                 <div class="mb-6">
                                                     <div class="grid grid-cols-1 md:grid-cols-2">
-                                                        <!-- <div class="pr-3">
-                                                            <label for="input-label-with-helper-text"
-                                                                class="block text-sm mb-2 text-gray-400">EQUIPMENT CODE :</label>
-                                                                <input 
-                                                                    type="text" 
-                                                                    id="input-label-with-helper-text"
-                                                                    name="code"
-                                                                    class="py-3 px-4 text-gray-500 block w-full border-gray-200 rounded-sm text-sm focus:border-blue-600 focus:ring-0 "
-                                                                    aria-describedby="hs-input-helper-text"
-                                                                    required
-                                                                    autocomplete="off">
-                                                            <i class="text-sm  text-gray-400 opacity-75 mt-2" id="hs-input-helper-text">
-                                                                *Fill in after "FUNAI" ex. "FUNAI-NB-35" please write "NB-35".
-                                                            </i>
-                                                        </div> -->
                                                         <div class="pr-3">
                                                             <label for="input-label-with-helper-text"
-                                                                class="block text-sm mb-2 text-gray-400">EQUIPMENT NAME :</label>
+                                                                class="block text-sm mb-2 text-gray-400">EQUIPMENT NAME <i class="text-red-500 text-xs">** required **</i></label>
+                                                                
                                                                 <input 
                                                                     type="text" 
                                                                     id="input-label-with-helper-text"
@@ -77,10 +62,9 @@
 
                                                 <div class="mb-6">
                                                     <div class="grid grid-cols-1 md:grid-cols-2">
-                                                        
                                                         <div>
                                                             <label for="input-label-with-helper-text"
-                                                                class="block text-sm mb-2 text-gray-400">TYPE :</label>
+                                                                class="block text-sm mb-2 text-gray-400">TYPE <i class="text-red-500 text-xs">** required **</i></label>
                                                             <select 
                                                                 name="equip_type"
                                                                 class="py-3 px-4 block w-full border-gray-200 rounded-sm 
@@ -98,10 +82,28 @@
                                                                     }
                                                                 ?>
                                                             </select>
+
+                                                            <!-- <input 
+                                                                list="typelList" 
+                                                                name="model" 
+                                                                id="model"
+                                                                class="py-3 px-4 block w-full border-gray-200 rounded-sm text-sm focus:border-blue-600 focus:ring-0 "
+                                                                aria-describedby="hs-input-helper-text"
+                                                                autocomplete="off"
+                                                            >
+
+                                                            <datalist id="typelList">
+                                                                <?php
+                                                                    foreach($type as $t) {
+                                                                        echo "<option value=\"".$t->id."\">".$t->name."</option>";
+                                                                    }
+                                                                ?>
+                                                            </datalist> -->
                                                         </div>
+
                                                         <div class="md:pl-3">
                                                             <label for="input-label-with-helper-text"
-                                                                class="block text-sm mb-2 text-gray-400">MANUFACTURER :</label>
+                                                                class="block text-sm mb-2 text-gray-400">MANUFACTURER</label>
 
                                                             <select 
                                                                 name="manufac"
@@ -128,7 +130,7 @@
                                                     <div class="grid grid-cols-1 md:grid-cols-2">
                                                         <div class="pr-3">
                                                             <label for="input-label-with-helper-text"
-                                                                class="block text-sm mb-2 text-gray-400">LOCATION :</label>
+                                                                class="block text-sm mb-2 text-gray-400">LOCATION <i class="text-red-500 text-xs">** required **</i></label>
                                                             <input 
                                                                 type="text" 
                                                                 id="input-label-with-helper-text"
@@ -140,7 +142,7 @@
 
                                                         <div class="pr-3">
                                                             <label for="input-label-with-helper-text"
-                                                                class="block text-sm mb-2 text-gray-400">FACTORY :</label>
+                                                                class="block text-sm mb-2 text-gray-400">FACTORY <i class="text-red-500 text-xs">** required **</i></label>
 
                                                                 <ul class="grid w-full gap-6 md:grid-cols-3">
                                                                     <li>
@@ -199,7 +201,7 @@
                                                     <div class="grid grid-cols-1 md:grid-cols-2">
                                                         <div class="pr-3">
                                                             <label for="input-label-with-helper-text"
-                                                                class="block text-sm mb-2 text-gray-400">RESPONSIBILITY (employee id):</label>
+                                                                class="block text-sm mb-2 text-gray-400">RESPONSIBILITY (employee id) <i class="text-red-500 text-xs">** required **</i></label>
                                                                 <input 
                                                                     list="employee" 
                                                                     name="emp_id" 
@@ -225,12 +227,12 @@
                                                     <div class="grid grid-cols-1 md:grid-cols-2">
                                                         <div class="pr-3">
                                                             <label for="input-label-with-helper-text"
-                                                                class="block text-sm mb-2 text-gray-400">DATE RECEIVE :</label>
+                                                                class="block text-sm mb-2 text-gray-400">DATE RECEIVE</label>
                                                             <input type="date" id="input-label-with-helper-text"
                                                                 name="recive"
                                                                 class="py-3 px-4 block w-full border-gray-200 rounded-sm text-sm focus:border-blue-600 focus:ring-0 "
                                                                 aria-describedby="hs-input-helper-text"
-                                                                required>
+                                                                >
                                                         </div>
                                                     </div>
                                                 </div>
@@ -248,7 +250,7 @@
                                                     <div class="grid grid-cols-1 md:grid-cols-2">
                                                         <div class="pr-3">
                                                             <label for="input-label-with-helper-text"
-                                                                class="block text-sm mb-2 text-gray-400">IP ADDRESS :</label>
+                                                                class="block text-sm mb-2 text-gray-400">IP ADDRESS <i class="text-red-500 text-xs">** required **</i></label>
                                                             <input 
                                                                 type="text" 
                                                                 id="input-label-with-helper-text"
@@ -256,11 +258,12 @@
                                                                 class="py-3 px-4 text-gray-500 block w-full border-gray-200 rounded-sm text-sm focus:border-blue-600 focus:ring-0 "
                                                                 aria-describedby="hs-input-helper-text"
                                                                 autocomplete="off"
+                                                                required
                                                             >
                                                         </div>
                                                         <div class="pr-3">
                                                             <label for="input-label-with-helper-text"
-                                                                class="block text-sm mb-2 text-gray-400">MODEL :</label>
+                                                                class="block text-sm mb-2 text-gray-400">MODEL</label>
 
                                                                 <input 
                                                                     list="modelList" 
@@ -286,7 +289,7 @@
                                                     <div class="grid grid-cols-1 md:grid-cols-2">
                                                         <div class="pr-3">
                                                             <label for="input-label-with-helper-text"
-                                                                class="block text-sm mb-2 text-gray-400">MEMORY TYPE :</label>
+                                                                class="block text-sm mb-2 text-gray-400">MEMORY TYPE <i class="text-red-500 text-xs">** required **</i></label>
 
                                                             <ul class="grid w-full gap-6 md:grid-cols-3">
                                                                 <li>
@@ -344,7 +347,7 @@
                                                     <div class="grid grid-cols-1">
                                                         <div class="pr-3">
                                                             <label for="input-label-with-helper-text"
-                                                                class="block text-sm mb-2 text-gray-400">MEMORY :</label>
+                                                                class="block text-sm mb-2 text-gray-400">MEMORY <i class="text-red-500 text-xs">** required **</i></label>
 
 
                                                             <ul class="grid w-full gap-6 md:grid-cols-4">
@@ -419,7 +422,7 @@
                                                     <div class="grid grid-cols-1">
                                                         <div>
                                                             <label for="input-label-with-helper-text"
-                                                                class="block text-sm mb-2 text-gray-400">RAM :</label>
+                                                                class="block text-sm mb-2 text-gray-400">RAM <i class="text-red-500 text-xs">** required **</i></label>
                                                                 <ul class="grid w-full gap-6 md:grid-cols-4">
                                                                 <li>
                                                                     <input type="radio" id="ram0" name="ram" value="-" class="hidden peer" required />
@@ -505,11 +508,16 @@
                                         </div>
                                     </div>
                                     
-                                    <button 
-                                        type="submit" 
-                                        class="btn text-base py-2.5 text-white 
-                                                font-medium w-fit hover:bg-blue-700"
-                                    >ADD</button>
+                                    <div class="w-full text-center mb-3">
+                                        <button type="submit" class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+                                            Comfirm
+                                        </button>
+                                    </div>
+                                    <div class="w-full text-center">
+                                        <button type="reset" class="text-red-700 font-semibold py-2 px-4 border border-none">
+                                            Clear
+                                        </button>
+                                    </div>
                                 </form>
 							</div>
 
