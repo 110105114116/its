@@ -13,7 +13,7 @@ class Equipment_model extends CI_Model {
             eq.code as code,
             eq.name as equip_name,
             eq.model as model,
-            i.ip as ip_address,
+            eq.ip_address as ip_address,
             t.name as type,
             e.emp_id as emp_id,
             CONCAT(e.f_name_th," ",e.l_name_th) as fullname,
@@ -25,9 +25,9 @@ class Equipment_model extends CI_Model {
             eq.factory as fac
         ')
         ->from('equipment eq')
-        ->join('employees e', 'e.emp_id = eq.emp_id')
-        ->join('equipment_type t', 't.id = eq.type_id')
-        ->join('ip_address i', 'i.eq_id = eq.id');
+        ->join('employees e', 'e.emp_id = eq.emp_id', 'left')
+        ->join('equipment_type t', 't.id = eq.type_id', 'left');
+        // ->join('ip_address i', 'i.eq_id = eq.id', 'left');
 
         $query = $this->db->get();
 
