@@ -147,4 +147,17 @@ class Equipment_model extends CI_Model {
 
         return $query->result();
     }
+
+    public function get_count_equip() {
+        $this->db->select('
+            SUM(case when status = 1 then 1 else 0 end) as active,
+            SUM(case when status != 1 then 1 else 0 end) as inactive,
+            count(*) as count
+        ')
+        ->from('equipment');
+
+        $query = $this->db->get();
+
+        return $query->row();
+    }
 }
