@@ -26,7 +26,8 @@ class Equipment_model extends CI_Model {
         ')
         ->from('equipment eq')
         ->join('employees e', 'e.emp_id = eq.emp_id', 'left')
-        ->join('equipment_type t', 't.id = eq.type_id', 'left');
+        ->join('equipment_type t', 't.id = eq.type_id', 'left')
+        ->where('e.s_id = ', 1);
         // ->join('ip_address i', 'i.eq_id = eq.id', 'left');
 
         $query = $this->db->get();

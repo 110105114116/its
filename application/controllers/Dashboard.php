@@ -6,14 +6,12 @@ class Dashboard extends CI_Controller {
         parent::__construct();
 
         $this->load->database();
-        // $this->load->model('Dashboard_model');
         $this->load->model('Equipment_model');
     }
 
 	public function index() {
         if(isset($this->session->userdata['emp_id'])) {
             $result['data'] = $this->Equipment_model->get_count_equip();
-            // print_r($result);
 
             $this->load->view('dashboard', $result);
         } else $this->load->view('login');
