@@ -140,15 +140,15 @@
                                                 </td>
                                                 
                                                 <td>
-                                                    <span class="text-sm font-semibold text-sky-800">
-                                                        <?php
-                                                            if($d->internet == 1) {
-                                                                echo "YES";
-                                                            } else if ($d->internet == "0") {
-                                                                echo "No";
-                                                            } else echo "-";
-                                                        ?>
-                                                    </span>
+                                                    <?php
+                                                        if($d->internet == 1) {
+                                                            echo "<span class=\"text-sm font-semibold text-sky-800\">";
+                                                            echo "Yes";
+                                                            echo "</span>";
+                                                        } else if ($d->internet == "0") {
+                                                            echo "<span class=\"text-sm font-semibold text-gray-800\">-</span>";
+                                                        } else echo "-";
+                                                    ?>
                                                 </td>
 
                                                 <td>
