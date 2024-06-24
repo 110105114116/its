@@ -49,11 +49,52 @@
 							</header>
 
 							<!-- Content -->
-                            <!-- <div class="card overflow-x-auto">
-                                <div class="card-body flex flex-col gap-6">
-                                    
+                            <div class="card">
+                                <div class="card-body flex flex-wrap gap-3">
+                                    <?php
+                                        if($lan == 32) {
+                                    ?>
+                                        <a href="#">
+                                            <button 
+                                                type="button" 
+                                                class=" py-2 px-6 btn rounded-2xl text-base font-medium 
+                                                        border border-transparent bg-blue-600 text-white 
+                                                        hover:bg-blue-700">
+                                                LAN 32 (10.112.32...)
+                                            </button>
+                                        </a>
+                                        <a href="<?php echo base_url()?>ipaddress?lan=33">
+                                            <button 
+                                                type="button" 
+                                                class=" py-2 px-7 inline-flex items-center gap-x-2 text-base 
+                                                        font-medium rounded-2xl border border-blue-600 text-blue-600 
+                                                        hover:border-blue-600 hover:text-white hover:bg-blue-600">
+                                                LAN 33 (10.112.33...)
+                                            </button>
+                                        </a>
+                                    <?php } else { ?>
+                                        
+                                        <a href="<?php echo base_url()?>ipaddress?lan=32">
+                                            <button 
+                                                type="button" 
+                                                class=" py-2 px-7 inline-flex items-center gap-x-2 text-base 
+                                                        font-medium rounded-2xl border border-blue-600 text-blue-600 
+                                                        hover:border-blue-600 hover:text-white hover:bg-blue-600">
+                                                LAN 32 (10.112.32...)
+                                            </button>
+                                        </a>
+                                        <a href="#">
+                                            <button 
+                                                type="button" 
+                                                class=" py-2 px-6 btn rounded-2xl text-base font-medium 
+                                                        border border-transparent bg-blue-600 text-white 
+                                                        hover:bg-blue-700 ">
+                                                LAN 33 (10.112.33...)
+                                            </button>
+                                        </a>
+                                    <?php } ?>
                                 </div>
-                            </div> -->
+                            </div>
 
 							<div class="card overflow-x-auto">
 								<div class="card-body flex flex-col gap-6">

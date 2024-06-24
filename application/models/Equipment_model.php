@@ -126,8 +126,8 @@ class Equipment_model extends CI_Model {
         $this->db->update('ip_address', $data);
     }
 
-    public function getIP() {
-        $this->db->select('
+    public function getIP($ip) {
+        $sql = 'select 
             i.id as no,
             i.ip as ip,
             e.name as name,
@@ -138,13 +138,13 @@ class Equipment_model extends CI_Model {
             e.factory as fac,
             i.status as status,
             i.internet as internet
-        ')
-        ->from('ip_address i')
-        ->join('equipment e', 'i.eq_id = e.id', 'left')
-        ->join('equipment_type t', 't.id = e.type_id', 'left')
-        ->join('employees em', 'em.emp_id = e.emp_id', 'left');
+        from ip_address i
+        left join equipment e on i.eq_id = e.id
+        left join equipment_type t on t.id = e.type_id
+        left join employees em on em.emp_id = e.emp_id
+        where i.ip like "10.112.'.$ip.'%"';
 
-        $query = $this->db->get();
+        $query = $this->db->query($sql);
 
         return $query->result();
     }

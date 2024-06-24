@@ -11,7 +11,11 @@ class Ipaddress extends CI_Controller {
 
 	public function index() {
         if(isset($this->session->userdata['emp_id'])) {
-            $result['data'] = $this->Equipment_model->getIP();
+            $result['lan'] = $this->input->get('lan');
+
+            $result['data'] = $this
+            ->Equipment_model
+            ->getIP($result['lan']);
 
             $this->load->view('ipaddress', $result);
         } else $this->load->view('login');
