@@ -143,7 +143,8 @@ class Equipment_model extends CI_Model {
         left join equipment e on i.eq_id = e.id
         left join equipment_type t on t.id = e.type_id
         left join employees em on em.emp_id = e.emp_id
-        where i.ip like "10.112.'.$ip.'%"';
+        where i.ip like "10.112.'.$ip.'%"
+        and em.s_id = 1';
 
         $query = $this->db->query($sql);
 
