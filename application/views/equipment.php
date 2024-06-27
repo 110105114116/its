@@ -16,6 +16,29 @@
                     "lengthMenu": [10, 20, 50, 100, 200, 500],
 				});
 			});
+
+            function delEquipment(id) {
+                Swal.fire({
+                    title: "Are you sure?",
+                    text: "You won't be able to revert this!",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#3085d6",
+                    cancelButtonColor: "#d33",
+                    confirmButtonText: "Yes, delete it!"
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        $.ajax({  
+                            url : "<?php echo base_url('equipment/delEquipment') ?>", 
+                            type:"POST",  
+                            data:{ equip_id: id },
+                            success:function(data){
+                                location.href = "<?php echo base_url()."equipment"; ?>"
+                            }  
+                        });
+                    }
+                });
+            }
 		</script>
 	</head>
 
@@ -63,53 +86,62 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <?php foreach($data as $ep) { ?>
+                                            <?php foreach($data as $eq) { ?>
                                             <tr>
                                                 <td>
-                                                    <span class="text-sm font-semibold"><?php echo $ep->equip_name; ?></span>
-                                                    <p class="text-xs font-semibold text-gray-500"><?php echo $ep->ip_address; ?></p>
+                                                    <span class="text-sm font-semibold"><?php echo $eq->equip_name; ?></span>
+                                                    <p class="text-xs font-semibold text-gray-500"><?php echo $eq->ip_address; ?></p>
                                                 </td>
                                                 <td>
-                                                    <span class="text-sm font-semibold text-sky-800"><?php echo $ep->model; ?></span>
+                                                    <span class="text-sm font-semibold text-sky-800"><?php echo $eq->model; ?></span>
                                                 </td>
                                                 <td>
-                                                    <span class="text-sm font-semibold text-sky-800"><?php echo $ep->type; ?></span>
+                                                    <span class="text-sm font-semibold text-sky-800"><?php echo $eq->type; ?></span>
                                                     <p class="text-xs font-semibold text-gray-500">
-                                                        RAM: <?php echo $ep->ram; ?> | <?php echo ($ep->mem_t == 1) ? "HHD" : "SSD"; ?>: 
-                                                        <?php echo $ep->mem; ?>
+                                                        RAM: <?php echo $eq->ram; ?> | <?php echo ($eq->mem_t == 1) ? "HHD" : "SSD"; ?>: 
+                                                        <?php echo $eq->mem; ?>
                                                     </p>
                                                 </td>
                                                 <td>
-                                                    <span class="text-sm font-semibold text-sky-800"><?php echo $ep->emp_id; ?></span>
-                                                    <p class="text-xs font-semibold text-gray-500"><?php echo $ep->fullname; ?></p>
+                                                    <span class="text-sm font-semibold text-sky-800"><?php echo $eq->emp_id; ?></span>
+                                                    <p class="text-xs font-semibold text-gray-500"><?php echo $eq->fullname; ?></p>
                                                 </td>
                                                 <td>
-                                                    <span class="text-sm font-semibold text-sky-800"><?php echo $ep->location; ?></span>
-                                                    <p class="text-xs font-semibold text-gray-500">Factory: <?php echo $ep->fac; ?></p>
+                                                    <span class="text-sm font-semibold text-sky-800"><?php echo $eq->location; ?></span>
+                                                    <p class="text-xs font-semibold text-gray-500">Factory: <?php echo $eq->fac; ?></p>
                                                 </td>
                                                 <td class="text-green-700 font-semibold">
                                                     <?php
-                                                        if($ep->status == 1) {
+                                                        if($eq->status == 1) {
                                                             echo "Active";
                                                         } else echo "Inactive";
                                                     ?>
                                                 </td>
                                                 <td>
-                                                    <button 
+                                                    <!-- <button 
 														data-modal-target="detailPlan" 
                                                         data-modal-toggle="detailPlan"
                                                         data-modal-show="detailPlan"
-														onclick="planManage(<?php echo $ep->id; ?>)"
+														onclick="planManage(<?php echo $eq->id; ?>)"
 														class="border border-sky-800 px-3 rounded py-2 text-sky-800 
                                                                 font-semibold hover:bg-sky-800 hover:text-white">
                                                         <i class="ti ti-search relative z-1"></i>
-                                                    </button>
-                                                    <!-- <button class="border border-yellow-600 px-3 rounded py-2 text-yellow-600 font-semibold hover:bg-yellow-600 hover:text-white">
-                                                        <i class="ti ti-edit relative z-1"></i>
-                                                    </button>
-                                                    <button class="border border-red-800 px-3 rounded py-2 text-red-800 font-semibold hover:bg-red-800 hover:text-white">
-                                                        <i class="ti ti-trash relative z-1"></i>
                                                     </button> -->
+                                                    <!-- <button 
+                                                        class="border border-yellow-600 px-3 rounded py-2 text-yellow-600 
+                                                                font-semibold hover:bg-yellow-600 hover:text-white"
+                                                        title="Equipment info"
+                                                    >
+                                                        <i class="ti ti-edit relative z-1"></i>
+                                                    </button> -->
+                                                    <button 
+                                                        class="border border-red-800 px-3 rounded py-2 text-red-800 
+                                                                font-semibold hover:bg-red-800 hover:text-white"
+                                                        title="Delete equipment"
+                                                        onclick="delEquipment(<?php echo $eq->id; ?>)"
+                                                    >
+                                                        <i class="ti ti-trash relative z-1"></i>
+                                                    </button>
                                                 </td>
                                             </tr>
                                             <?php } ?>

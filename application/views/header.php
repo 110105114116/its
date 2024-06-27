@@ -11,5 +11,6 @@
 <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/fontawesome.css">
 <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/flowbite.css">
 
+<script src="<?php echo base_url(); ?>assets/js/sweetAlert.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/tailwind.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/jQuery.js"></script>

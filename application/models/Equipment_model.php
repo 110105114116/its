@@ -144,7 +144,7 @@ class Equipment_model extends CI_Model {
         left join equipment_type t on t.id = e.type_id
         left join employees em on em.emp_id = e.emp_id
         where i.ip like "10.112.'.$ip.'%"
-        and em.s_id = 1';
+        group by i.ip';
 
         $query = $this->db->query($sql);
 
@@ -162,5 +162,29 @@ class Equipment_model extends CI_Model {
         $query = $this->db->get();
 
         return $query->row();
+    }
+
+    public function delEquip($id) {
+        return $this->db->delete('equipment', array('id' => $id));
+    }
+
+    public function get_by_id($id) {
+        $this->db->select('ip_address')
+        ->from('equipment')
+        ->where('id = ', $id);
+
+        $query = $this->db->get();
+
+        return $query->row();
+    }
+
+    public function ipReset($ip) {
+        $data = array(
+            'eq_id' => '',
+            'status' => 1
+        );
+        
+        $this->db->where('ip', $ip);
+        $this->db->update('ip_address', $data);
     }
 }

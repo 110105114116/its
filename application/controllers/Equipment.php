@@ -11,7 +11,10 @@ class Equipment extends CI_Controller {
 
 	public function index() {
         if(isset($this->session->userdata['emp_id'])) {
-            $result['data'] = $this->Equipment_model->get_all();
+            $result['data'] = $this
+                ->Equipment_model
+                ->get_all();
+
             $this->load->view('equipment', $result);
         } else $this->load->view('login');
 	}
@@ -94,5 +97,51 @@ class Equipment extends CI_Controller {
         $result['data'] = $this->Equipment_model->get_plan($id);
 
         $this->load->view('plan-manage', $result);
+    }
+
+    public function delEquipment() {
+        $id = $this->input->post('equip_id');
+
+        $eq = $this->Equipment_model->get_by_id($id);
+
+        $ip = strtolower($eq->ip_address);
+
+        if($this->Equipment_model->delEquip($id) == 1) {
+            if($ip != 'dhcp') {
+                $this->Equipment_model->ipReset($ip);
+            }
+
+            $this->session->set_flashdata(
+                array(
+                    'msgerr' => '<div class="toast active">
+                    <div class="toast-content">
+                        <i class="fa fa-solid fa-check checked"></i>
+                        <div class="message">
+                        <span class="text text-1">สำเร็จ</span>
+                        <span class="text text-2">ลบข้อมูลอุปกรณ์เรียบร้อยแล้ว</span>
+                        </div>
+                    </div>
+                    <i class="fa fa-solid fa-close close"></i>
+                    <div class="progress active"></div>
+                </div>'
+                )
+            );
+        } else {
+            $this->session->set_flashdata(
+                array(
+                    'msgerr' => '<div class="toast active">
+                    <div class="toast-content">
+                        <i class="fa fa-solid fa-close check"></i>
+                        <div class="message">
+                        <span class="text text-1">ไม่สำเร็จ</span>
+                        <span class="text text-2">เกิดข้อผิดพลาด โปรดลองอีกครั้ง</span>
+                        </div>
+                    </div>
+                    <i class="fa fa-solid fa-close close"></i>
+                    <div class="progress active"></div>
+                </div>'
+                )
+            );
+        }
     }
 }

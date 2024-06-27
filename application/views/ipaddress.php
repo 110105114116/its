@@ -169,10 +169,10 @@
                                                     ?>
                                                 </td>
                                                 <td>
-                                                    <button class="border border-sky-800 px-3 rounded py-2 text-sky-800 
+                                                    <!-- <button class="border border-sky-800 px-3 rounded py-2 text-sky-800 
                                                         font-semibold hover:bg-sky-800 hover:text-white">
                                                         <i class="ti ti-search relative z-1"></i>
-                                                    </button>
+                                                    </button> -->
                                                     <!-- <button class="border border-yellow-600 px-3 rounded py-2 text-yellow-600 font-semibold hover:bg-yellow-600 hover:text-white">
                                                         <i class="ti ti-edit relative z-1"></i>
                                                     </button>
