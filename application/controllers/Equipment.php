@@ -99,6 +99,18 @@ class Equipment extends CI_Controller {
         $this->load->view('plan-manage', $result);
     }
 
+    public function getInfo() {
+        $id = $this->input->post('id');
+
+        $result['data'] = $this->Equipment_model->get_equipment_info($id);
+        $result['type'] = $this->Equipment_model->get_equip_type();
+        $result['emp'] = $this->Equipment_model->get_employee();
+        $result['manufactorer'] = $this->Equipment_model->get_manufactorer();
+        $result['os'] = $this->Equipment_model->get_os();
+
+        $this->load->view('equipment_info', $result);
+    }
+
     public function delEquipment() {
         $id = $this->input->post('equip_id');
 
@@ -143,5 +155,56 @@ class Equipment extends CI_Controller {
                 )
             );
         }
+    }
+
+    public function update() {
+        $dateUpdate['eqId'] = $this->input->post('eqId');
+        $dateUpdate['eqIp'] = $this->input->post('eqIp');
+        $dateUpdate['eqName'] = $this->input->post('eqName');
+        $dateUpdate['eqType'] = $this->input->post('eqType');
+        $dateUpdate['emp_id'] = $this->input->post('emp_id');
+        $dateUpdate['eqLocation'] = $this->input->post('eqLocation');
+        $dateUpdate['eqOs'] = $this->input->post('eqOs');
+        $dateUpdate['eqModel'] = $this->input->post('eqModel');
+        $dateUpdate['eqRam'] = $this->input->post('eqRam');
+        $dateUpdate['eqMemType'] = $this->input->post('eqMemType');
+        $dateUpdate['eqStorage'] = $this->input->post('eqStorage');
+        $dateUpdate['eqManufac'] = $this->input->post('eqManufac');
+
+        if($this->Equipment_model->update_equipment_info($dateUpdate) == 1) {
+			$this->session->set_flashdata(
+				array(
+					'msgerr' => '<div class="toast active">
+					<div class="toast-content">
+						<i class="fa fa-solid fa-check checked"></i>
+						<div class="message">
+						<span class="text text-1">สำเร็จ</span>
+						<span class="text text-2">เปลี่ยนข้อมูลอุปกรณ์เรียบร้อยแล้ว</span>
+						</div>
+					</div>
+					<i class="fa fa-solid fa-close close"></i>
+					<div class="progress active"></div>
+				</div>'
+				)
+			);
+			redirect('equipment', 'refresh');
+		} else {
+			$this->session->set_flashdata(
+				array(
+					'msgerr' => '<div class="toast active">
+					<div class="toast-content">
+						<i class="fa fa-solid fa-close check"></i>
+						<div class="message">
+						<span class="text text-1">ไม่สำเร็จ</span>
+						<span class="text text-2">เกิดข้อผิดพลาด โปรดลองอีกครั้ง</span>
+						</div>
+					</div>
+					<i class="fa fa-solid fa-close close"></i>
+					<div class="progress active"></div>
+				</div>'
+				)
+			);
+			redirect('equipment', 'refresh');
+		}
     }
 }

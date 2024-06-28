@@ -14,3 +14,8 @@
 <script src="<?php echo base_url(); ?>assets/js/sweetAlert.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/tailwind.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/jQuery.js"></script>
+
+
+<script src="<?php echo base_url();?>assets/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="<?php echo base_url();?>assets/css/modal.css">

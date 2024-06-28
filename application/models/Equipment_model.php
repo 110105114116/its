@@ -187,4 +187,62 @@ class Equipment_model extends CI_Model {
         $this->db->where('ip', $ip);
         $this->db->update('ip_address', $data);
     }
+
+    public function get_os() {
+        $this->db->select('*')
+        ->from('os');
+
+        $query = $this->db->get();
+
+        return $query->result();
+    }
+
+    public function get_equipment_info($id) {
+        $this->db->select('
+            eq.id,
+            eq.emp_id,
+            eq.name,
+            eq.ip_address as ip_address,
+            eq.model,
+            t.id as type_id,
+            t.name as eq_type,
+            eq.location as location,
+            eq.status as status,
+            eq.ram as ram,
+            eq.memory_type as memory,
+            eq.memory as storage,
+            eq.ma_id as ma_id,
+            m.name as manufac,
+            eq.os as os_id,
+            o.name as os_name
+        ')
+        ->from('equipment eq')
+        ->join('equipment_type t', 't.id = eq.type_id', 'left')
+        ->join('manufacturer m', 'm.id = eq.ma_id')
+        ->join('os o', 'o.id = eq.os', 'left')
+        ->where('eq.id = ', $id);
+
+        $query = $this->db->get();
+
+        return $query->row();
+    }
+
+    public function update_equipment_info($dateUpdate) {
+        $dataUpdate = array(
+            'ip_address' => $dateUpdate['eqIp'],
+            'name' => $dateUpdate['eqName'],
+            'type_id' => $dateUpdate['eqType'],
+            'emp_id' => $dateUpdate['emp_id'],
+            'location' => $dateUpdate['eqLocation'],
+            'os' => $dateUpdate['eqOs'],
+            'model' => $dateUpdate['eqModel'],
+            'ram' => $dateUpdate['eqRam'],
+            'memory_type' => $dateUpdate['eqMemType'],
+            'memory' => $dateUpdate['eqStorage'],
+            'ma_id' => $dateUpdate['eqManufac']
+        );
+        
+        $this->db->where('id', $dateUpdate['eqId']);
+        return $this->db->update('equipment', $dataUpdate);
+    }
 }
